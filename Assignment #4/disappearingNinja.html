@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Assignment #1</title>
+    <style>
+    	.demoPictures{
+            width:280px;
+            height:280px;
+        }
+    </style>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script>
+        console.log($())
+        $(document).ready(function(){
+            $( "#Picture1" ).click(function() {
+                $( "#Picture1" ).toggle( "slow", function() {
+                });
+            });
+            $( "#Picture2" ).click(function() {
+                $( "#Picture2" ).toggle( "slow", function() {
+                });
+            });
+            $( "#Picture3" ).click(function() {
+                $( "#Picture3" ).toggle( "slow", function() {
+                });
+            });
+            $( "#Picture4" ).click(function() {
+                $( "#Picture4" ).toggle( "slow", function() {
+                });
+            });
+            $( "#Picture5" ).click(function() {
+                $( "#Picture5" ).toggle( "slow", function() {
+                });
+            });
+            $( "#Picture6" ).click(function() {
+                $( "#Picture6" ).toggle( "slow", function() {
+                });
+            });
+            $( "#Picture7" ).click(function() {
+                $( "#Picture7" ).toggle( "slow", function() {
+                });
+            });
+            $( "#Picture8" ).click(function() {
+                $( "#Picture8" ).toggle( "slow", function() {
+                });
+            });
+            $( "#restoreButton" ).click(function() {
+                $( "#Picture1" ).show();
+                $( "#Picture2" ).show();
+                $( "#Picture3" ).show();
+                $( "#Picture4" ).show();
+                $( "#Picture5" ).show();
+                $( "#Picture6" ).show();
+                $( "#Picture7" ).show();
+                $( "#Picture8" ).show();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <img src="Ninja.png" id="Picture1" class="demoPictures">
+        <img src="Ninja.png" id="Picture2" class="demoPictures">
+        <img src="Ninja.png" id="Picture3" class="demoPictures">
+        <img src="Ninja.png" id="Picture4" class="demoPictures">
+        <img src="Ninja.png" id="Picture5" class="demoPictures">
+        <img src="Ninja.png" id="Picture6" class="demoPictures">
+        <img src="Ninja.png" id="Picture7" class="demoPictures">
+        <img src="Ninja.png" id="Picture8" class="demoPictures">
+    </div>
+    <div>
+        <button type="button" id="restoreButton">Restore</button>
+    </div>
+</body>
+</html>

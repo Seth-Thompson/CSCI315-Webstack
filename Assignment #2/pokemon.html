@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Assignment #2</title>
+    <script src="https://code.jquery.com/jquery-2.1.3.js"></script>
+    <script>
+        $(document).ready(function (){
+            for (i = 0; i < 151; i++) {
+                $.get('https://pokeapi.co/api/v2/pokemon/' + i + '/', function (obj) {
+                    console.log(obj);
+                    var img = obj.sprites.front_default;
+                    var name = obj.species.name;
+                    $('.pokemon').append("<img src =" + img + ">");
+                    $('.pokemon').append(name);
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="pokemon">
+        <h1> Assignment: Pokemon </h1>
+    </div>
+</body>
+</html>

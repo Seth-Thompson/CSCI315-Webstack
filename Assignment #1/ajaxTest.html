@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Assignment #1</title>
+    <style>
+    	.demoPictures{
+            width:276px;
+            height:280px;
+        }
+    </style>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script>
+        console.log($())
+        $(document).ready(function(){
+            var hsClick = 0;
+            var fClick = 0;
+            var sClick = 0;
+            $('#hideShowButton').click(function() {
+                if (hsClick == 0){
+                    hsClick = 1;
+                }
+                else{
+                    hsClick = 0;
+                }
+
+                if (hsClick == 1){
+                    $('#Picture1').hide();
+                    $('#Picture2').hide();
+                }
+                else{
+                    $('#Picture1').show();
+                    $('#Picture2').show();
+                }
+            });
+            $( "#toggleDogCat" ).click(function() {
+                $( "#Picture1" ).toggle( "slow", function() {
+                });
+                $( "#Picture2" ).toggle( "slow", function() {
+                });
+            });
+            $( '#fadeDogCat' ).click(function() {
+                if (fClick == 0){
+                    fClick = 1;
+                }
+                else{
+                    fClick = 0;
+                }
+
+                if (fClick == 1){
+                    $('#Picture1').fadeOut();
+                    $('#Picture2').fadeOut();
+                }
+                else{
+                    $('#Picture1').fadeIn();
+                    $('#Picture2').fadeIn();
+                }
+            });
+            $( '#slideDogCat' ).click(function() {
+                if (sClick == 0){
+                    sClick = 1;
+                }
+                else{
+                    sClick = 0;
+                }
+
+                if (sClick == 1){
+                    $('#Picture1').slideUp();
+                    $('#Picture2').slideUp();
+                }
+                else{
+                    $('#Picture1').slideDown();
+                    $('#Picture2').slideDown();
+                }
+            });
+            $("#hideShowButton").before("This is written before the buttons -> ");
+            $("#slideDogCat").after(" <- This is written after the buttons");
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <img src="Dog Picture.jpg" id="Picture1" class="demoPictures">
+        <img src="Cat Picture.jpg" id="Picture2" class="demoPictures">
+    </div>
+    <div>
+        <button type="button" id="hideShowButton">Hide/Show Dog and Cat</button>
+        <button type="button" id="toggleDogCat">Toggle Away Dog and Cat</button>
+        <button type="button" id="fadeDogCat">Fade in and out Dog and Cat</button>
+        <button type="button" id="slideDogCat">Slide Dog and Cat Up/Down</button>
+    </div>
+</body>
+</html>

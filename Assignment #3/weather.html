@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Assignment #3</title>
+    <script src="https://code.jquery.com/jquery-2.1.3.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('form').submit(function() {
+                // your code here (build up your url)
+                const i = document.getElementsByName("city");
+                console.log(i)
+                const j = i[0].value;
+                console.log(j);
+                $.get('http://api.openweathermap.org/data/2.5/weather?q='+j+',us&APPID=b1140a6e0d04f182ad581d2a4daf0733', function(res) {
+                    // your code here
+                    console.log(res);
+                    var weather = j+": "+res.weather[0].description;
+                    var temperature = "Temperature: "+((res.main.temp - 273.15) * 9/5 + 32).toFixed(2)+"F";
+                    var location = "Coord: "+res.coord.lon+", "+res.coord.lat;
+                    $('.results').append("<br></br>");
+                    $('.results').append(weather);
+                    $('.results').append("<br></br>");
+                    $('.results').append(temperature);
+                    $('.results').append("<br></br>");
+                    $('.results').append(location);
+                }, 'json');
+            return false;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="weather">
+        <h1>Weather Forcast Search</h1>
+        <form>
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city">
+            <input type="submit" value="Submit Query">
+        </form>
+    </div>
+    <div class="results">
+
+    </div>
+</body>
+</html>
